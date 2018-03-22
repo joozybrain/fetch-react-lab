@@ -11,12 +11,18 @@ function Profile(props) {
           alt="profile_pic"
         />
       </th>
-      <tr>{props.profileData.name.first} 
-      {props.profileData.name.last}</tr>
+      <tr id="name">
+        {props.profileData.name.first}<span>  </span>
+        {props.profileData.name.last}
+      </tr>
       <tr> {props.profileData.email}</tr>
-      <tr>{props.profileData.location.state}</tr>
+      <tr>
+        {props.profileData.location.street}
+        {props.profileData.location.state}
+      </tr>
     </table>
   );
 }
 
 export default Profile;
+

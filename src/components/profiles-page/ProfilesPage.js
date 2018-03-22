@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Profile from "./Profile";
-import "./Profile.css"
+import "./Profile.css";
 class ProfilesPage extends Component {
   constructor() {
     super();
@@ -10,7 +10,7 @@ class ProfilesPage extends Component {
   }
 
   componentDidMount() {
-    fetch("https://randomuser.me/api?results=10")
+    fetch("https://randomuser.me/api?results=50")
       .then(data => {
         return data.json();
       })
@@ -24,9 +24,13 @@ class ProfilesPage extends Component {
       <div class="grid">
         {this.state.profiles.map((profile, i) => {
           return (
-            <div key={i} class="module" style={{background:randomColorChange()}}
-            alt={randomColorChange()}>
-              <Profile profileData={profile}  />
+            <div
+              key={i}
+              class="module"
+              style={{ background: randomColorChange() }}
+              alt={randomColorChange()}
+            >
+              <Profile profileData={profile} />
             </div>
           );
         })}
@@ -34,11 +38,9 @@ class ProfilesPage extends Component {
     );
   }
 }
-console.log(randomColorChange())  
 
-function randomColorChange(){
-  return '#'+(Math.floor(Math.random()*16777216)&0xFFFFFF).toString(16);
+function randomColorChange() {
+  return "#" + (Math.floor(Math.random() * 16777216) & 0xffffff).toString(16);
 }
-
 
 export default ProfilesPage;

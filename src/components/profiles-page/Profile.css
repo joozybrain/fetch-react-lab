@@ -37,11 +37,20 @@ body {
       border-radius: 50%;
       
   }
+
+  #name {
+      text-transform: uppercase;
+  }
+
 th {
     text-align: center;
 
     }  
 
+tr {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 17px;
+    }
   /* If Grid is supported, remove the margin we set for the fallback */
   @supports (display: grid) {
     .module {
